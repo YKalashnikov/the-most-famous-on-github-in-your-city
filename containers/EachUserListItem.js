@@ -15,18 +15,22 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   eachUserContainerEven: {
+    marginTop: '10px',
     width: '100%',
     paddingBottom: theme.spacing(2),
-    backgroundColor: theme.background.paper,
-    borderBottomWidth: '0.5px !important',
-    borderBottom: '0.5px solid grey',
+    backgroundColor: '#E5E4F3',
+    border: '0.1px solid gray',
+    borderRadius: '12px'
   },
   eachUserContainerOdd: {
+    marginTop: '10px',
     width: '100%',
     paddingBottom: theme.spacing(2),
     backgroundColor: theme.palette.secondary.light,
-    borderBottomWidth: '0.5px !important',
-    borderBottom: '0.5px solid grey',
+    border: '0.1px solid gray',
+    borderRadius: '12px'
+    //borderBottomWidth: '0.5px !important',
+    //borderBottom: '0.5px solid grey',
   },
   imageClass: {
     width: '25px',
@@ -121,8 +125,8 @@ const EachUserListItem = ({ currentCityShown }) => {
               >
                 <img
                   className={classes.imageClass}
-                 /*  src={require('../../assets/images/location.png')}
-                  alt="" */
+                 /*  src={require('../public/location.png')} */
+                  alt=""
                 />
                 <Typography>{currentCityShown}</Typography>
               </div>

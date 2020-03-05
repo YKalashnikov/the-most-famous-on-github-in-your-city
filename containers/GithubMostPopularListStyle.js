@@ -5,6 +5,8 @@ const useStyles = makeStyles(theme => ({
   container: {
     margin: 'auto',
     backgroundColor: theme.background.default,
+    borderBottomLeftRadius: '15px',
+    borderBottomRightRadius: '15px'
   },
   tableAndFabContainer: {
     position: 'relative',
@@ -18,19 +20,19 @@ const useStyles = makeStyles(theme => ({
   },
   table: {
     backgroundColor: theme.background.paper,
-    borderRadius: theme.shape.borderRadius,
     paddingBottom: '100px',
     alignItems: 'center ',
     justifyContent: 'center ',
     verticalAlign: 'middle ',
     textAlign: 'center',
+
   },
 
   inputandButtonContainer: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center ',
-    justifyContent: 'center ',
+    justifyContent: 'center '
   },
   react_autosuggest__container: {
     position: 'relative',
@@ -82,7 +84,7 @@ const useStyles = makeStyles(theme => ({
     padding: '10px 20px',
   },
   react_autosuggest__suggestion__highlighted: {
-    backgroundColor: '#ddd',
+    backgroundColor: '#6711E0',
   },
 }))
 

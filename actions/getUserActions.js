@@ -63,7 +63,7 @@ import {
     })
   }
   
-  // Util function to merge to topUsers array the data from userProfiles array, as they are coming from two different api calls
+
   const mergeArraysConditionally = (topUsers, userProfiles) => {
     let merged = []
   

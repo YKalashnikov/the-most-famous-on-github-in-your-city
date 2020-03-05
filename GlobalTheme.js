@@ -6,11 +6,11 @@ const globalTheme = createMuiTheme({
     white: '#fff',
   },
   shape: {
-    borderRadius: '8px',
+    //borderRadius: '8px',
   },
   background: {
     paper: '#fff',
-    headers: '#CECECE',
+    headers: '#2882F8',
     default: 'rgba(229, 229, 229, 1)',
   },
   palette: {
@@ -20,8 +20,8 @@ const globalTheme = createMuiTheme({
       dark: '#212121',
     },
     secondary: {
-      main: '#2882F8',
-      light: '#fdffe0',
+      main: '#E5E4F3',
+      light: '#D4D3CF',
     },
     error: {
       main: '#ff0000',

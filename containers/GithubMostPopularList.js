@@ -42,7 +42,7 @@ const renderSuggestion = suggestion => {
   return <span>{suggestion.name}</span>
 }
 
-const GithubMostPopularList = () => {
+const GithubMostPopularList = ({onClose}) => {
   const globalStore = useSelector(state => state.globalStore)
   const dispatch = useDispatch()
   const classes = useStyles()

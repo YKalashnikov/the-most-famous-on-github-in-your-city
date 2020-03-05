@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingTop: '7rem',
-    height: '100%',
+    height: '100%'
   },
   progress: {
     display: 'flex',

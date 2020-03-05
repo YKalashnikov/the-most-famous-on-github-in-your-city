@@ -9,7 +9,7 @@ const Layout = (props) => (
        <MuiThemeProvider theme={globalTheme}>
      <Head>
      <title>Popular GutHub user in your city</title>
-     <link rel="icon" href="/favicon.ico" />
+     <link rel="icon" href="../public/favicon.ico" />
    </Head>
     <Header/>
     <div className="container">

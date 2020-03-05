@@ -110,12 +110,11 @@ const globalTheme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__
     black: '#000',
     white: '#fff'
   },
-  shape: {
-    borderRadius: '8px'
+  shape: {//borderRadius: '8px',
   },
   background: {
     paper: '#fff',
-    headers: '#CECECE',
+    headers: '#2882F8',
     default: 'rgba(229, 229, 229, 1)'
   },
   palette: {
@@ -125,8 +124,8 @@ const globalTheme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__
       dark: '#212121'
     },
     secondary: {
-      main: '#2882F8',
-      light: '#fdffe0'
+      main: '#E5E4F3',
+      light: '#D4D3CF'
     },
     error: {
       main: '#ff0000',
@@ -296,8 +295,7 @@ const getEachUserGivenId = (id, index) => {
       console.log('HIT the ERROR');
     });
   });
-}; // Util function to merge to topUsers array the data from userProfiles array, as they are coming from two different api calls
-
+};
 
 const mergeArraysConditionally = (topUsers, userProfiles) => {
   let merged = []; // First return the first array with only elements whose id matches with an element's id from the second array
@@ -602,9 +600,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+/* import {logo} from '../assets/favicon.ico'  */
+
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   container: {
-    //backgroundColor: theme.background.headers,
+    borderTopLeftRadius: '15px',
+    borderTopRightRadius: '15px',
+    backgroundColor: theme.background.headers,
     textAlign: 'center',
     height: '80px'
   },
@@ -633,7 +635,8 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     height: '100% !important',
     textAlign: 'center !important',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    color: 'white'
   }
 }));
 
@@ -643,40 +646,40 @@ const Header = ({}) => {
     className: classes.container,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 48
     },
     __self: undefined
   }, __jsx("div", {
     className: classes.internalContainer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx("div", {
     className: classes.iconContainer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 50
     },
     __self: undefined
   }), __jsx("div", {
     className: classes.textContainer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 53
     },
     __self: undefined
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    variant: "h1",
+    variant: "h5",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 54
     },
     __self: undefined
-  }, " Hello "))));
+  }, " Find Popular GutHub User "))));
 };
-/* PageHeader.propTypes = {
+/* Header.propTypes = {
   headerText: PropTypes.string.isRequired,
 } */
 
@@ -737,7 +740,7 @@ const Layout = props => __jsx("div", {
   __self: undefined
 }, "Popular GutHub user in your city"), __jsx("link", {
   rel: "icon",
-  href: "/favicon.ico",
+  href: "../public/favicon.ico",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 12
@@ -886,18 +889,22 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["
     backgroundColor: theme.palette.background.paper
   },
   eachUserContainerEven: {
+    marginTop: '10px',
     width: '100%',
     paddingBottom: theme.spacing(2),
-    backgroundColor: theme.background.paper,
-    borderBottomWidth: '0.5px !important',
-    borderBottom: '0.5px solid grey'
+    backgroundColor: '#E5E4F3',
+    border: '0.1px solid gray',
+    borderRadius: '12px'
   },
   eachUserContainerOdd: {
+    marginTop: '10px',
     width: '100%',
     paddingBottom: theme.spacing(2),
     backgroundColor: theme.palette.secondary.light,
-    borderBottomWidth: '0.5px !important',
-    borderBottom: '0.5px solid grey'
+    border: '0.1px solid gray',
+    borderRadius: '12px' //borderBottomWidth: '0.5px !important',
+    //borderBottom: '0.5px solid grey',
+
   },
   imageClass: {
     width: '25px',
@@ -922,7 +929,7 @@ const EachUserListItem = ({
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 53
     },
     __self: undefined
   }, globalStore.topTenUsersInCity.map((item, index) => {
@@ -931,7 +938,7 @@ const EachUserListItem = ({
       className: index % 2 ? classes.eachUserContainerOdd : classes.eachUserContainerEven,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 57
       },
       __self: undefined
     }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -939,13 +946,13 @@ const EachUserListItem = ({
       button: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 64
       },
       __self: undefined
     }, __jsx(_material_ui_core_ListItemAvatar__WEBPACK_IMPORTED_MODULE_7___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 65
       },
       __self: undefined
     }, __jsx(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -954,7 +961,7 @@ const EachUserListItem = ({
       src: item.avatar_url,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 66
       },
       __self: undefined
     })), __jsx("div", {
@@ -963,20 +970,20 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 72
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 73
       },
       __self: undefined
     }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 74
       },
       __self: undefined
     }, __jsx("a", {
@@ -987,7 +994,7 @@ const EachUserListItem = ({
       target: "_blank",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 75
       },
       __self: undefined
     }, item.login)))), __jsx("div", {
@@ -996,14 +1003,14 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 85
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 90
       },
       __self: undefined
     }, "Total Stars Received", __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1011,7 +1018,7 @@ const EachUserListItem = ({
       primary: item.totalUserStars,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 92
       },
       __self: undefined
     })))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1019,21 +1026,21 @@ const EachUserListItem = ({
       button: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 99
       },
       __self: undefined
     }, __jsx("div", {
       className: classes.listItem,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 100
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 101
       },
       __self: undefined
     }, "Name", __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1041,7 +1048,7 @@ const EachUserListItem = ({
       primary: item.name,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 103
       },
       __self: undefined
     }))), __jsx("div", {
@@ -1050,14 +1057,14 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 107
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 112
       },
       __self: undefined
     }, "Bio", __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1065,13 +1072,13 @@ const EachUserListItem = ({
       primary: item.bio,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 110
+        lineNumber: 114
       },
       __self: undefined
     })))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_5___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 118
       },
       __self: undefined
     }, __jsx("div", {
@@ -1082,23 +1089,23 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 119
       },
       __self: undefined
     }, __jsx("img", {
       className: classes.imageClass
-      /*  src={require('../../assets/images/location.png')}
-       alt="" */
+      /*  src={require('../public/location.png')} */
       ,
+      alt: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 122
+        lineNumber: 126
       },
       __self: undefined
     }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127
+        lineNumber: 131
       },
       __self: undefined
     }, currentCityShown)), __jsx("div", {
@@ -1107,7 +1114,7 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129
+        lineNumber: 133
       },
       __self: undefined
     }, __jsx("div", {
@@ -1117,7 +1124,7 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130
+        lineNumber: 134
       },
       __self: undefined
     }, __jsx("img", {
@@ -1127,7 +1134,7 @@ const EachUserListItem = ({
       ,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 136
+        lineNumber: 140
       },
       __self: undefined
     }), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1135,7 +1142,7 @@ const EachUserListItem = ({
       primary: item.email === null ? 'Email not accessible' : item.email,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141
+        lineNumber: 145
       },
       __self: undefined
     })))));
@@ -1237,7 +1244,9 @@ const renderSuggestion = suggestion => {
   }, suggestion.name);
 };
 
-const GithubMostPopularList = () => {
+const GithubMostPopularList = ({
+  onClose
+}) => {
   const globalStore = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(state => state.globalStore);
   const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
   const classes = Object(_GithubMostPopularListStyle__WEBPACK_IMPORTED_MODULE_12__["useStyles"])();
@@ -1450,7 +1459,9 @@ __webpack_require__.r(__webpack_exports__);
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   container: {
     margin: 'auto',
-    backgroundColor: theme.background.default
+    backgroundColor: theme.background.default,
+    borderBottomLeftRadius: '15px',
+    borderBottomRightRadius: '15px'
   },
   tableAndFabContainer: {
     position: 'relative',
@@ -1464,7 +1475,6 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   },
   table: {
     backgroundColor: theme.background.paper,
-    borderRadius: theme.shape.borderRadius,
     paddingBottom: '100px',
     alignItems: 'center ',
     justifyContent: 'center ',
@@ -1527,7 +1537,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     padding: '10px 20px'
   },
   react_autosuggest__suggestion__highlighted: {
-    backgroundColor: '#ddd'
+    backgroundColor: '#6711E0'
   }
 }));
 
@@ -3245,24 +3255,30 @@ module.exports = _typeof;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _containers_GithubMostPopularList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../containers/GithubMostPopularList */ "./containers/GithubMostPopularList.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
-/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux-thunk */ "redux-thunk");
-/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(redux_thunk__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux */ "redux");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _containers_GithubMostPopularList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../containers/GithubMostPopularList */ "./containers/GithubMostPopularList.js");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux-thunk */ "redux-thunk");
+/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux_thunk__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _GlobalTheme__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../GlobalTheme */ "./GlobalTheme.js");
 var _jsxFileName = "/Users/yuriikalashnikov/Desktop/popular-user-in-github/pages/index.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
@@ -3271,28 +3287,50 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const store = Object(redux__WEBPACK_IMPORTED_MODULE_8__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_6__["default"], {}, Object(redux__WEBPACK_IMPORTED_MODULE_8__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_7___default.a));
 
-const Home = () => __jsx(react_redux__WEBPACK_IMPORTED_MODULE_5__["Provider"], {
-  store: store,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 13
+
+
+const store = Object(redux__WEBPACK_IMPORTED_MODULE_9__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_7__["default"], {}, Object(redux__WEBPACK_IMPORTED_MODULE_9__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_8___default.a));
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__["makeStyles"])(theme => ({
+  container: {
+    backgroundColor: theme.palette.background.default,
+    height: '100%',
+    width: '100%'
   },
-  __self: undefined
-}, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 14
+  header: {
+    height: '64px'
   },
-  __self: undefined
-}, __jsx(_containers_GithubMostPopularList__WEBPACK_IMPORTED_MODULE_4__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 15
-  },
-  __self: undefined
-})));
+  contentContainer: {
+    height: 'calc(100% - 64px)'
+  }
+}));
+
+const Home = () => {
+  return __jsx(react_redux__WEBPACK_IMPORTED_MODULE_5__["Provider"], {
+    store: store,
+    className: "container",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx(_containers_GithubMostPopularList__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "1561337796",
+    __self: undefined
+  }, ".container.jsx-1561337796{width:100%;height:100%;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy95dXJpaWthbGFzaG5pa292L0Rlc2t0b3AvcG9wdWxhci11c2VyLWluLWdpdGh1Yi9wYWdlcy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFpQ2UsQUFHc0IsV0FDQyxZQUNkIiwiZmlsZSI6Ii9Vc2Vycy95dXJpaWthbGFzaG5pa292L0Rlc2t0b3AvcG9wdWxhci11c2VyLWluLWdpdGh1Yi9wYWdlcy9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCdcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcbmltcG9ydCBMYXlvdXQgZnJvbSAnLi4vY29tcG9uZW50cy9MYXlvdXQnXG5pbXBvcnQgeyB1c2VTZWxlY3RvciB9IGZyb20gJ3JlYWN0LXJlZHV4J1xuaW1wb3J0IEdpdGh1Yk1vc3RQb3B1bGFyTGlzdCBmcm9tICcuLi9jb250YWluZXJzL0dpdGh1Yk1vc3RQb3B1bGFyTGlzdCdcbmltcG9ydCB7IFByb3ZpZGVyIH0gZnJvbSAncmVhY3QtcmVkdXgnXG5pbXBvcnQgcm9vdFJlZHVjZXJzIGZyb20gJy4uL3JlZHVjZXJzJ1xuaW1wb3J0IHJlZHV4VGh1bmsgZnJvbSAncmVkdXgtdGh1bmsnXG5pbXBvcnQgeyBjcmVhdGVTdG9yZSwgYXBwbHlNaWRkbGV3YXJlIH0gZnJvbSAncmVkdXgnXG5pbXBvcnQgeyBNdWlUaGVtZVByb3ZpZGVyLCBtYWtlU3R5bGVzIH0gZnJvbSAnQG1hdGVyaWFsLXVpL2NvcmUvc3R5bGVzJ1xuaW1wb3J0IGdsb2JhbFRoZW1lIGZyb20gJy4uL0dsb2JhbFRoZW1lJ1xuY29uc3Qgc3RvcmUgPSBjcmVhdGVTdG9yZShyb290UmVkdWNlcnMsIHt9LCBhcHBseU1pZGRsZXdhcmUocmVkdXhUaHVuaykpXG5cblxuY29uc3QgdXNlU3R5bGVzID0gbWFrZVN0eWxlcyh0aGVtZSA9PiAoe1xuICBjb250YWluZXI6IHtcbiAgICBiYWNrZ3JvdW5kQ29sb3I6IHRoZW1lLnBhbGV0dGUuYmFja2dyb3VuZC5kZWZhdWx0LFxuICAgIGhlaWdodDogJzEwMCUnLFxuICAgIHdpZHRoOiAnMTAwJScsXG4gIH0sXG4gIGhlYWRlcjoge1xuICAgIGhlaWdodDogJzY0cHgnLFxuICB9LFxuICBjb250ZW50Q29udGFpbmVyOiB7XG4gICAgaGVpZ2h0OiAnY2FsYygxMDAlIC0gNjRweCknLFxuICB9LFxufSkpXG5cbmNvbnN0IEhvbWUgPSAoKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPFByb3ZpZGVyIHN0b3JlPXtzdG9yZX0gY2xhc3NOYW1lPVwiY29udGFpbmVyXCIgPlxuICA8TGF5b3V0ID4gICAgXG4gICA8R2l0aHViTW9zdFBvcHVsYXJMaXN0Lz5cbiAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgLmNvbnRhaW5lciB7XG4gICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgaGVpZ2h0OiAxMDAlO1xuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gIDwvTGF5b3V0PlxuICA8L1Byb3ZpZGVyPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IEhvbWVcbiJdfQ== */\n/*@ sourceURL=/Users/yuriikalashnikov/Desktop/popular-user-in-github/pages/index.js */")));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 
@@ -3779,6 +3817,17 @@ module.exports = require("redux");
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ }),
 
