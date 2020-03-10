@@ -1,6 +1,6 @@
 ## Find the most popular Github user in your city
 
-➜ [Demo]()
+➜ [Demo](githubfamous.netlify.com)
 
 ### Using
 
@@ -15,6 +15,6 @@
 ```bash
 npm run dev
 # or
-yarn dev
+yarn run dev
 also npm run 'test' 'for' testing with jest
 ```
