@@ -121,7 +121,7 @@ const globalTheme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__
     primary: {
       light: '#2882F8',
       main: '#2882F8',
-      dark: '#212121'
+      dark: '#1E90FF'
     },
     secondary: {
       main: '#E5E4F3',
@@ -279,6 +279,7 @@ const handleSnackBarStatus = bool => {
 const getEachUserGivenId = (id, index) => {
   return new Promise((resolve, reject) => {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.all([axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://api.github.com/users/${id}`), axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://api.github.com/users/${id}/repos?per_page=200`)]).then(axios__WEBPACK_IMPORTED_MODULE_1___default.a.spread((userProfile, userRepo) => {
+      console.log('data', userProfile);
       let userProfileData = userProfile.data;
       const totalUserStars = userRepo.data.map(i => i.stargazers_count).reduce((total, item) => total + item);
       let result = pick(userProfileData, ['login', 'bio', 'email', 'name', 'id']);
@@ -314,7 +315,6 @@ const loadMostPopularUsers = (city, page, numbersToFetch) => async dispatch => {
     });
     axios__WEBPACK_IMPORTED_MODULE_1___default()({
       method: 'get',
-      // url: `https://api.github.com/search/users?q=location%3A${city}&followers%3A%3E%3D1000&ref=searchresults&s=followers&type=Users`,
       url: `https://api.github.com/search/users?q=location:${city}`,
       headers
     }).then(async res => {
@@ -471,8 +471,7 @@ const AppSnackbarContent = props => {
         lineNumber: 46
       },
       __self: undefined
-    }, message) // eslint-disable-next-line react/jsx-props-no-spreading
-
+    }, message)
   }, other, {
     __source: {
       fileName: _jsxFileName,
@@ -545,7 +544,7 @@ const GlobalSnackbar = ({
     onClose: onClose,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 16
     },
     __self: undefined
   }, __jsx(_AppSnackbarContent__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -555,7 +554,7 @@ const GlobalSnackbar = ({
     message: message,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: undefined
   }));
@@ -594,13 +593,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _public_favicon_ico__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../public/favicon.ico */ "./public/favicon.ico");
+/* harmony import */ var _public_favicon_ico__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_public_favicon_ico__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/yuriikalashnikov/Desktop/popular-user-in-github/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-/* import {logo} from '../assets/favicon.ico'  */
 
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
   container: {
@@ -625,9 +625,9 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
     '& img': {
       position: 'absolute',
       top: theme.spacing(2),
-      left: theme.spacing(0),
+      left: theme.spacing(2),
       height: '50px',
-      width: '65px'
+      width: '50px'
     }
   },
   textContainer: {
@@ -663,7 +663,15 @@ const Header = ({}) => {
       lineNumber: 50
     },
     __self: undefined
-  }), __jsx("div", {
+  }, __jsx("img", {
+    src: _public_favicon_ico__WEBPACK_IMPORTED_MODULE_4___default.a,
+    alt: "Cholo logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  })), __jsx("div", {
     className: classes.textContainer,
     __source: {
       fileName: _jsxFileName,
@@ -705,6 +713,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _GlobalTheme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../GlobalTheme */ "./GlobalTheme.js");
+/* harmony import */ var _public_favicon_ico__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../public/favicon.ico */ "./public/favicon.ico");
+/* harmony import */ var _public_favicon_ico__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_public_favicon_ico__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/yuriikalashnikov/Desktop/popular-user-in-github/components/Layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -713,50 +723,51 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const Layout = props => __jsx("div", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8
+    lineNumber: 9
   },
   __self: undefined
 }, __jsx(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["MuiThemeProvider"], {
   theme: _GlobalTheme__WEBPACK_IMPORTED_MODULE_4__["default"],
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 10
   },
   __self: undefined
 }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10
+    lineNumber: 11
   },
   __self: undefined
 }, __jsx("title", {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 11
+    lineNumber: 12
   },
   __self: undefined
 }, "Popular GutHub user in your city"), __jsx("link", {
   rel: "icon",
-  href: "../public/favicon.ico",
+  href: _public_favicon_ico__WEBPACK_IMPORTED_MODULE_5___default.a,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 13
   },
   __self: undefined
 })), __jsx(_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 14
+    lineNumber: 15
   },
   __self: undefined
 }), __jsx("div", {
   className: "container",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 15
+    lineNumber: 16
   },
   __self: undefined
 }, props.children)));
@@ -914,7 +925,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["
     marginLeft: '80px'
   },
   avatar: {
-    width: '60px',
+    width: '70px',
     height: '70px'
   }
 }));
@@ -929,7 +940,7 @@ const EachUserListItem = ({
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 51
     },
     __self: undefined
   }, globalStore.topTenUsersInCity.map((item, index) => {
@@ -938,7 +949,7 @@ const EachUserListItem = ({
       className: index % 2 ? classes.eachUserContainerOdd : classes.eachUserContainerEven,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 55
       },
       __self: undefined
     }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -946,13 +957,13 @@ const EachUserListItem = ({
       button: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 62
       },
       __self: undefined
     }, __jsx(_material_ui_core_ListItemAvatar__WEBPACK_IMPORTED_MODULE_7___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 63
       },
       __self: undefined
     }, __jsx(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -961,7 +972,7 @@ const EachUserListItem = ({
       src: item.avatar_url,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 64
       },
       __self: undefined
     })), __jsx("div", {
@@ -970,20 +981,20 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 70
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 71
       },
       __self: undefined
     }, __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 72
       },
       __self: undefined
     }, __jsx("a", {
@@ -994,7 +1005,7 @@ const EachUserListItem = ({
       target: "_blank",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 73
       },
       __self: undefined
     }, item.login)))), __jsx("div", {
@@ -1003,14 +1014,14 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 83
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h3",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 88
       },
       __self: undefined
     }, "Total Stars Received", __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1018,7 +1029,7 @@ const EachUserListItem = ({
       primary: item.totalUserStars,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 90
       },
       __self: undefined
     })))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1026,21 +1037,21 @@ const EachUserListItem = ({
       button: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 97
       },
       __self: undefined
     }, __jsx("div", {
       className: classes.listItem,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 98
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 99
       },
       __self: undefined
     }, "Name", __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1048,7 +1059,7 @@ const EachUserListItem = ({
       primary: item.name,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 101
       },
       __self: undefined
     }))), __jsx("div", {
@@ -1057,28 +1068,28 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 105
       },
       __self: undefined
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       variant: "h4",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 110
       },
       __self: undefined
     }, "Bio", __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
       id: labelId,
-      primary: item.bio,
+      primary: item.bio ? item.bio : 'No bio',
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114
+        lineNumber: 112
       },
       __self: undefined
     })))), __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_5___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 118
+        lineNumber: 116
       },
       __self: undefined
     }, __jsx("div", {
@@ -1089,23 +1100,22 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 119
+        lineNumber: 117
       },
       __self: undefined
     }, __jsx("img", {
-      className: classes.imageClass
-      /*  src={require('../public/location.png')} */
-      ,
+      className: classes.imageClass,
+      src: __webpack_require__(/*! ../public/location.png */ "./public/location.png"),
       alt: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 126
+        lineNumber: 124
       },
       __self: undefined
     }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 129
       },
       __self: undefined
     }, currentCityShown)), __jsx("div", {
@@ -1114,7 +1124,7 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 133
+        lineNumber: 131
       },
       __self: undefined
     }, __jsx("div", {
@@ -1124,17 +1134,16 @@ const EachUserListItem = ({
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 132
       },
       __self: undefined
     }, __jsx("img", {
-      className: classes.imageClass
-      /* src={require('../../assets/images/email.png')}
-      alt="" */
-      ,
+      className: classes.imageClass,
+      src: __webpack_require__(/*! ../public/email.png */ "./public/email.png"),
+      alt: "",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140
+        lineNumber: 138
       },
       __self: undefined
     }), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1142,7 +1151,7 @@ const EachUserListItem = ({
       primary: item.email === null ? 'Email not accessible' : item.email,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145
+        lineNumber: 143
       },
       __self: undefined
     })))));
@@ -1322,7 +1331,7 @@ const GithubMostPopularList = ({
       lineNumber: 98
     },
     __self: undefined
-  }, console.log('PAGE ', page), globalStore.loading ? __jsx("div", {
+  }, globalStore.loading ? __jsx("div", {
     className: classes.spinner,
     __source: {
       fileName: _jsxFileName,
@@ -1342,7 +1351,7 @@ const GithubMostPopularList = ({
       lineNumber: 105
     },
     __self: undefined
-  }, console.log('SNACKBAR ', globalStore.snackbar), __jsx("div", {
+  }, __jsx("div", {
     className: classes.inputandButtonContainer,
     __source: {
       fileName: _jsxFileName,
@@ -1432,10 +1441,11 @@ const GithubMostPopularList = ({
     __self: undefined
   })));
 };
+/* GithubMostPopularList.propTypes = {
+  onClose: PropTypes.func.isRequired,
+} */
 
-GithubMostPopularList.propTypes = {
-  onClose: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func.isRequired
-};
+
 /* harmony default export */ __webpack_exports__["default"] = (GithubMostPopularList);
 
 /***/ }),
@@ -3333,6 +3343,39 @@ const Home = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./public/email.png":
+/*!**************************!*\
+  !*** ./public/email.png ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/email-e4c88d8146c9bd1e4285faf8eec96f2b.png";
+
+/***/ }),
+
+/***/ "./public/favicon.ico":
+/*!****************************!*\
+  !*** ./public/favicon.ico ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/favicon-8850b886fdeffa566909a44548567b0b.ico";
+
+/***/ }),
+
+/***/ "./public/location.png":
+/*!*****************************!*\
+  !*** ./public/location.png ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
 
 /***/ }),
 

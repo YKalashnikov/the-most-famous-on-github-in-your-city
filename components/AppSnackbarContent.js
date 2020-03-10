@@ -47,7 +47,6 @@ const AppSnackbarContent = props => {
           {message}
         </span>
       }
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...other}
     />
   )

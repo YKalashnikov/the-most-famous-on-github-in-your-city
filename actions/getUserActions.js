@@ -32,6 +32,7 @@ import {
         ])
         .then(
           axios.spread((userProfile, userRepo) => {
+            console.log('data',userProfile)
             let userProfileData = userProfile.data
             const totalUserStars = userRepo.data
               .map(i => i.stargazers_count)
@@ -94,7 +95,6 @@ import {
       })
       axios({
         method: 'get',
-        // url: `https://api.github.com/search/users?q=location%3A${city}&followers%3A%3E%3D1000&ref=searchresults&s=followers&type=Users`,
         url: `https://api.github.com/search/users?q=location:${city}`,
         headers,
       })

@@ -6,13 +6,6 @@ module.exports = {
       test: {
         presets: [['@babel/preset-env']]
       }
-    },/* 
-    module: {
-      rules: [
-        {
-          test: /\.(png|jpg|svg|gif)$/,
-          use: ['file-loader']
-        },
-      ]
-    }, */
+    }
   }
+  

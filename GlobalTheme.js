@@ -17,7 +17,7 @@ const globalTheme = createMuiTheme({
     primary: {
       light: '#2882F8',
       main: '#2882F8',
-      dark: '#212121',
+      dark: '#1E90FF',
     },
     secondary: {
       main: '#E5E4F3',

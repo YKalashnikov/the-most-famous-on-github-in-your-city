@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => ({
 
 const GlobalSnackbar = ({ open, onClose, message, variant }) => {
   const classes = useStyles()
-
   return (
     <Snackbar
       anchorOrigin={{

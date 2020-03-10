@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography'
-/* import {logo} from '../assets/favicon.ico'  */
+import favicon from '../public/favicon.ico' 
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -27,9 +27,9 @@ const useStyles = makeStyles(theme => ({
     '& img': {
       position: 'absolute',
       top: theme.spacing(2),
-      left: theme.spacing(0),
+      left: theme.spacing(2),
       height: '50px',
-      width: '65px',
+      width: '50px',
     },
   },
   textContainer: {
@@ -48,7 +48,7 @@ const Header = ({  }) => {
     <div className={classes.container}>
       <div className={classes.internalContainer}>
         <div className={classes.iconContainer}>
-         {/*  <img src={logo} alt="Cholo logo" /> */}
+          <img src={favicon} alt="Cholo logo" />
         </div>
         <div className={classes.textContainer}>
           <Typography variant="h5"> Find Popular GutHub User </Typography>

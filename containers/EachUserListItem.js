@@ -11,7 +11,6 @@ import Avatar from '@material-ui/core/Avatar'
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-
     backgroundColor: theme.palette.background.paper,
   },
   eachUserContainerEven: {
@@ -40,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: '80px',
   },
   avatar: {
-    width: '60px',
+    width: '70px',
     height: '70px',
   },
 }))
@@ -48,7 +47,6 @@ const useStyles = makeStyles(theme => ({
 const EachUserListItem = ({ currentCityShown }) => {
   const globalStore = useSelector(state => state.globalStore)
   const classes = useStyles()
-
   return (
     <List dense className={classes.root}>
       {globalStore.topTenUsersInCity.map((item, index) => {
@@ -90,7 +88,7 @@ const EachUserListItem = ({ currentCityShown }) => {
                 <Typography variant="h3">
                   Total Stars Received
                   <ListItemText id={labelId} primary={item.totalUserStars} />
-                  {/* <Typography variant="overline">
+                {/*   <Typography variant="overline">
                     {item.totalUserStars}
                   </Typography> */}
                 </Typography>
@@ -111,7 +109,7 @@ const EachUserListItem = ({ currentCityShown }) => {
               >
                 <Typography variant="h4">
                   Bio
-                  <ListItemText id={labelId} primary={item.bio} />
+                  <ListItemText id={labelId} primary={item.bio?item.bio:'No bio'} />
                 </Typography>
               </div>
             </ListItem>
@@ -125,7 +123,7 @@ const EachUserListItem = ({ currentCityShown }) => {
               >
                 <img
                   className={classes.imageClass}
-                 /*  src={require('../public/location.png')} */
+                  src={require('../public/location.png')}
                   alt=""
                 />
                 <Typography>{currentCityShown}</Typography>
@@ -139,8 +137,8 @@ const EachUserListItem = ({ currentCityShown }) => {
                 >
                   <img
                     className={classes.imageClass}
-                    /* src={require('../../assets/images/email.png')}
-                    alt="" */
+                    src={require('../public/email.png')}
+                    alt=""
                   />
                   <ListItemText
                     id={labelId}
