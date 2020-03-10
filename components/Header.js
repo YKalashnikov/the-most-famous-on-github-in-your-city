@@ -2,7 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import Typography from '@material-ui/core/Typography'
-import favicon from '../public/favicon.ico' 
+import favicon from '../static/favicon.ico' 
 
 const useStyles = makeStyles(theme => ({
   container: {

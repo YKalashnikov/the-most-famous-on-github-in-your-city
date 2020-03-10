@@ -123,7 +123,7 @@ const EachUserListItem = ({ currentCityShown }) => {
               >
                 <img
                   className={classes.imageClass}
-                  src={require('../public/location.png')}
+                  src={require('../static/location.png')}
                   alt=""
                 />
                 <Typography>{currentCityShown}</Typography>
@@ -137,7 +137,7 @@ const EachUserListItem = ({ currentCityShown }) => {
                 >
                   <img
                     className={classes.imageClass}
-                    src={require('../public/email.png')}
+                    src={require('../static/email.png')}
                     alt=""
                   />
                   <ListItemText

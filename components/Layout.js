@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Header from './Header';
 import { MuiThemeProvider, makeStyles } from '@material-ui/core/styles'
 import globalTheme from '../GlobalTheme'
-import favicon from '../public/favicon.ico'
+import favicon from '../static/favicon.ico'
 
 const Layout = (props) => (
   <div>
