@@ -1,6 +1,6 @@
 ## Find the most popular Github user in your city
 
-➜ [Demo](https://githubfamous.netlify.com/)
+➜ [Demo](https://githubfamous.netlify.com)
 
 ### Using
 
